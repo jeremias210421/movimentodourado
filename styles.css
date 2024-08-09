@@ -95,6 +95,21 @@ header {
     left: 10px;
 }
 
+.index-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px; /* Ajuste conforme necessário para acomodar a logo */
+}
+
+.index-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 /* Estilo específico para as páginas de desenvolvimento e demais páginas */
 .page-logo {
     width: 150px;
@@ -103,7 +118,7 @@ header {
     left: 10px;
 }
 
-main {
+.page-main {
     display: flex;
     flex-direction: column;
     align-items: center;
