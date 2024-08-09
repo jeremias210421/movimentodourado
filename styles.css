@@ -18,13 +18,14 @@ body, html {
     color: var(--text-color);
     box-sizing: border-box;
     font-size: var(--font-size-base);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo {
     width: 10%;
     max-width: 120px;
-    height: 0;
-    padding-bottom: 10%;
     position: fixed;
     top: 2vh;
     left: 2vw;
@@ -66,7 +67,7 @@ body, html {
     transform: scale(1.1);
 }
 
-main {
+.main {
     padding: 2vh 5vw;
     max-width: 1200px;
     margin: 0 auto;
@@ -126,12 +127,25 @@ p, li {
     z-index: 3;
 }
 
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+.overlay.active {
+    display: block;
+}
+
 @media (max-width: 1200px) {
     .logo {
         width: 12%;
-        padding-bottom: 12%;
     }
-    
     .nav-menu {
         gap: 1.5vw;
     }
@@ -140,9 +154,7 @@ p, li {
 @media (max-width: 992px) {
     .logo {
         width: 15%;
-        padding-bottom: 15%;
     }
-    
     .nav-menu button {
         min-width: 100px;
     }
@@ -151,15 +163,12 @@ p, li {
 @media (max-width: 768px) {
     .logo {
         width: 20%;
-        padding-bottom: 20%;
         top: 1vh;
         left: 1vw;
     }
-    
     .menu-toggle {
         display: block;
     }
-    
     .nav-menu {
         display: none;
         flex-direction: column;
@@ -174,16 +183,13 @@ p, li {
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
-    
     .nav-menu.active {
         display: flex;
     }
-    
     .nav-menu button {
         width: 100%;
         margin-bottom: 1vh;
     }
-    
     .centralizado {
         margin-top: 15vh;
     }
@@ -192,9 +198,7 @@ p, li {
 @media (max-width: 576px) {
     .logo {
         width: 25%;
-        padding-bottom: 25%;
     }
-    
     .centralizado {
         margin-top: 12vh;
     }
@@ -204,103 +208,12 @@ img {
     max-width: 100%;
     height: auto;
 }
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 1;
 
-    body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    font-family: 'Roboto', sans-serif;
-    background-color: #ff7f30; /* Cor de fundo laranja */
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-}
-
-.logo {
-    width: 80%; /* Largura adaptável */
-    max-width: 450px; /* Largura máxima */
-    position: absolute;
-    top: 35%; /* 30% do topo */
-    left: 50%;
-    transform: translate(-50%, -50%); /* Ajusta a posição para centralizar verticalmente */
-    text-align: center;
-    z-index: 1;
-}
-
-.overlay {
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 1;
-}
-
-.buttons {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center; /* Centraliza os botões */
-    gap: 30px; /* Espaçamento entre os botões */
-    flex-wrap: nowrap; /* Garante que os botões não quebrem para a linha de baixo */
-}
-
-.buttons button {
-    background: #000; /* Cor dos botões ajustada para preto */
-    border: none;
-    padding: 15px 30px;
-    font-size: 14px; /* Ajustado para 14px */
-    cursor: pointer;
-    transition: all 0.3s ease; /* Transição suave para todas as propriedades */
-    border-radius: 25px;
-    color: #fff; /* Cor do texto dos botões */
-    white-space: nowrap; /* Impede a quebra de linha do texto */
-    width: auto; /* Ajusta a largura do botão conforme o texto */
-    min-width: 120px; /* Define uma largura mínima para o botão */
-    text-align: center; /* Centraliza o texto dentro do botão */
-}
-
-.buttons button:hover {
-    background: #fff; /* Cor de fundo dos botões ao passar o cursor */
-    color: #000; /* Cor do texto dos botões ao passar o cursor */
-    transform: scale(1.1);
-}
-
-.footer {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 14px;
-    margin-top: 16px;
-    font-family: 'Roboto', sans-serif;
-}
-
-.footer a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.footer a:hover {
-    text-decoration: underline;
-}
 header {
     position: relative;
     width: 100%;
     height: auto;
-    background-color: #ff7f30; /* Cor de fundo laranja do cabeçalho */
+    background-color: var(--main-color);
     padding: 15px 0;
     box-sizing: border-box;
 }
@@ -313,7 +226,7 @@ nav {
 }
 
 nav a {
-    color: #fff;
+    color: var(--text-color);
     text-decoration: none;
     margin: 0 15px;
     font-size: 16px;
@@ -321,7 +234,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #ff7f30;
+    color: var(--main-color);
 }
 
 .buttons {
@@ -331,30 +244,21 @@ nav a:hover {
 }
 
 .buttons button {
-    background: #000; /* Cor dos botões ajustada para preto */
+    background: var(--button-bg);
     border: none;
     padding: 15px 30px;
-    font-size: 14px; /* Ajustado para 14px */
+    font-size: 14px;
     cursor: pointer;
-    transition: all 0.3s ease; /* Transição suave para todas as propriedades */
+    transition: all 0.3s ease;
     border-radius: 25px;
-    color: #fff; /* Cor do texto dos botões */
-    white-space: nowrap; /* Impede a quebra de linha do texto */
-    width: auto; /* Ajusta a largura do botão conforme o texto */
-    min-width: 120px; /* Define uma largura mínima para o botão */
-    text-align: center; /* Centraliza o texto dentro do botão */
+    color: var(--button-text);
+    white-space: nowrap;
+    min-width: 120px;
+    text-align: center;
 }
 
 .buttons button:hover {
-    background: #fff; /* Cor de fundo dos botões ao passar o cursor */
-    color: #000; /* Cor do texto dos botões ao passar o cursor */
+    background: var(--button-hover-bg);
+    color: var(--button-hover-text);
     transform: scale(1.1);
-}
-
-/* Remova ou ajuste as media queries para manter o layout de desktop */
-
-}
-
-.overlay.active {
-    display: block;
 }
