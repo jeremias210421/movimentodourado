@@ -31,6 +31,19 @@ body, html {
     z-index: 1;
 }
 
+.hamburger {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: var(--text-color);
+    z-index: 2;
+    cursor: pointer;
+}
+
 .buttons {
     display: flex;
     justify-content: center;
@@ -78,13 +91,32 @@ body, html {
     text-decoration: underline;
 }
 
+/* Estilos para telas pequenas */
 @media (max-width: 768px) {
     .logo {
         width: 40%;
         max-width: 150px;
     }
 
+    .hamburger {
+        display: block; /* Exibe o menu hambúrguer */
+    }
+
     .buttons {
+        display: none; /* Esconde os botões inicialmente */
         flex-direction: column;
+        position: static;
+        transform: none;
+        gap: 10px;
+    }
+
+    .buttons.open {
+        display: flex; /* Exibe o menu quando aberto */
+        align-items: center;
+    }
+
+    .buttons button {
+        width: 100%;
+        max-width: 200px;
     }
 }
