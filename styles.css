@@ -22,7 +22,7 @@ body, html {
 
 .logo {
     width: 50%; /* Aumentei a largura para 50% do container */
-    max-width: 400px; /* Largura máxima ajustada para 300px */
+    max-width: 300px; /* Largura máxima ajustada para 300px */
     position: absolute;
     top: 50%; /* Centraliza verticalmente */
     left: 50%; /* Centraliza horizontalmente */
@@ -98,6 +98,7 @@ p, li {
     position: absolute;
     bottom: 0;
     width: 100%;
+    font-size: 0.75rem; /* Reduzi o tamanho do texto do rodapé */
 }
 
 .footer a {
