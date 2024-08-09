@@ -1,5 +1,5 @@
 :root {
-    --main-color: #ff7f30;
+    --main-color: #fce619; /* Cor de fundo amarelo */
     --text-color: #fff;
     --button-bg: #000;
     --button-text: #fff;
@@ -18,21 +18,17 @@ body, html {
     color: var(--text-color);
     box-sizing: border-box;
     font-size: var(--font-size-base);
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .logo {
-    width: 10%;
-    max-width: 120px;
-    position: fixed;
-    top: 2vh;
-    left: 2vw;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: 2;
+    width: 50%; /* Aumentei a largura para 50% do container */
+    max-width: 300px; /* Largura máxima ajustada para 300px */
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta a posição para centralizar */
+    text-align: center;
+    z-index: 1;
 }
 
 .nav-menu {
@@ -67,7 +63,7 @@ body, html {
     transform: scale(1.1);
 }
 
-.main {
+main {
     padding: 2vh 5vw;
     max-width: 1200px;
     margin: 0 auto;
@@ -127,48 +123,23 @@ p, li {
     z-index: 3;
 }
 
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 1;
-}
-
-.overlay.active {
-    display: block;
-}
-
 @media (max-width: 1200px) {
-    .logo {
-        width: 12%;
-    }
     .nav-menu {
         gap: 1.5vw;
     }
 }
 
 @media (max-width: 992px) {
-    .logo {
-        width: 15%;
-    }
     .nav-menu button {
         min-width: 100px;
     }
 }
 
 @media (max-width: 768px) {
-    .logo {
-        width: 20%;
-        top: 1vh;
-        left: 1vw;
-    }
     .menu-toggle {
         display: block;
     }
+    
     .nav-menu {
         display: none;
         flex-direction: column;
@@ -183,22 +154,22 @@ p, li {
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
+    
     .nav-menu.active {
         display: flex;
     }
+    
     .nav-menu button {
         width: 100%;
         margin-bottom: 1vh;
     }
+    
     .centralizado {
         margin-top: 15vh;
     }
 }
 
 @media (max-width: 576px) {
-    .logo {
-        width: 25%;
-    }
     .centralizado {
         margin-top: 12vh;
     }
@@ -209,56 +180,17 @@ img {
     height: auto;
 }
 
-header {
-    position: relative;
-    width: 100%;
-    height: auto;
-    background-color: var(--main-color);
-    padding: 15px 0;
-    box-sizing: border-box;
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1;
 }
 
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-nav a {
-    color: var(--text-color);
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: var(--main-color);
-}
-
-.buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.buttons button {
-    background: var(--button-bg);
-    border: none;
-    padding: 15px 30px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 25px;
-    color: var(--button-text);
-    white-space: nowrap;
-    min-width: 120px;
-    text-align: center;
-}
-
-.buttons button:hover {
-    background: var(--button-hover-bg);
-    color: var(--button-hover-text);
-    transform: scale(1.1);
+.overlay.active {
+    display: block;
 }
