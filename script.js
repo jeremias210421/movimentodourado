@@ -15,3 +15,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         document.body.style.overflow = '';
     });
 });
+// Script para abrir e fechar o menu em modo sanduíche
+document.querySelector('.hamburger').addEventListener('click', () => {
+    document.querySelector('.buttons').classList.toggle('open');
+});
+
