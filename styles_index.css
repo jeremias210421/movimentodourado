@@ -112,12 +112,13 @@ body, html {
         top: 20%; /* Ajusta a posição vertical para 20% do topo */
         left: 50%;
         transform: translate(-50%, 0); /* Ajusta a posição para centralizar horizontalmente */
-        width: 100%;
+        width: 80%; /* Largura ajustada para ocupar 80% da tela */
         max-width: 400px; /* Ajuste conforme necessário */
-        height: auto; /* Ajusta a altura conforme o conteúdo */
         background: var(--overlay-bg); /* Fundo com a cor definida */
         z-index: 3;
         padding: 20px 0; /* Espaço ao redor do menu */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra para um efeito de profundidade */
+        border-radius: 10px; /* Adiciona bordas arredondadas */
     }
 
     .buttons.open {
