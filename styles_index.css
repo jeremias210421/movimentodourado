@@ -109,9 +109,9 @@ body, html {
         display: none; /* Esconde os botões inicialmente em telas pequenas */
         flex-direction: column;
         position: fixed; /* Fixar o menu na tela */
-        top: 50%; /* Centraliza verticalmente */
+        top: 20%; /* Ajusta a posição vertical para 20% do topo */
         left: 50%;
-        transform: translate(-50%, -50%); /* Ajusta a posição para centralizar */
+        transform: translate(-50%, 0); /* Ajusta a posição para centralizar horizontalmente */
         width: 100%;
         max-width: 400px; /* Ajuste conforme necessário */
         height: auto; /* Ajusta a altura conforme o conteúdo */
