@@ -100,7 +100,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 60px; /* Ajuste conforme necessário para acomodar a logo */
+    margin-top: 100px; /* Ajuste conforme necessário para acomodar a logo */
 }
 
 .index-buttons {
@@ -160,7 +160,7 @@ p {
     }
 
     h1 {
-        margin-top: 30px; /* Ajuste para posicionar o título mais abaixo */
+        margin-top: 100px; /* Ajuste para posicionar o título mais abaixo */
         font-size: 20px; /* Ajuste o tamanho do título se necessário */
     }
 
