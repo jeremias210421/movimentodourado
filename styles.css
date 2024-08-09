@@ -154,11 +154,24 @@ p {
 
 /* Estilos para telas pequenas */
 @media (max-width: 768px) {
+    .index-main,
+    .page-main {
+        margin-top: 80px; /* Ajuste conforme necessário para acomodar o logo e o texto */
+    }
+
+    h1 {
+        margin-top: 20px; /* Ajuste para posicionar o título mais abaixo */
+        font-size: 20px; /* Ajuste o tamanho do título se necessário */
+    }
+
+    p {
+        margin-top: 10px; /* Ajuste para posicionar o texto mais abaixo */
+        font-size: 16px; /* Ajuste o tamanho do texto se necessário */
+    }
+
     .index-logo,
     .page-logo {
         width: 40%;
         max-width: 150px;
     }
 }
-
-    
