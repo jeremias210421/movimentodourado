@@ -1,0 +1,122 @@
+:root {
+    --main-color: #fce619; /* Cor de fundo amarelo */
+    --text-color: #fff;
+    --button-bg: #000;
+    --button-text: #fff;
+    --button-hover-bg: #fff;
+    --button-hover-text: #000;
+    --font-size-base: 16px;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    box-sizing: border-box;
+    font-size: var(--font-size-base);
+}
+
+.logo {
+    width: 20%; /* Ajuste a largura da logo conforme necessário */
+    max-width: 200px; /* Largura máxima ajustada */
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta a posição para centralizar */
+    text-align: center;
+    z-index: 1;
+}
+
+.hamburger {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: var(--text-color);
+    z-index: 2;
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 70%; /* Ajuste a posição vertical conforme necessário */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    gap: 15px; /* Espaçamento entre os botões */
+}
+
+.buttons button {
+    background: var(--button-bg);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    color: var(--button-text);
+    border-radius: 25px;
+    white-space: nowrap;
+}
+
+.buttons button:hover {
+    background: var(--button-hover-bg);
+    color: var(--button-hover-text);
+}
+
+.footer {
+    text-align: center;
+    padding: 2vh 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 12px; /* Reduz o tamanho do texto do rodapé */
+    color: var(--button-text);
+}
+
+.footer a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para telas pequenas */
+@media (max-width: 768px) {
+    .logo {
+        width: 40%;
+        max-width: 150px;
+    }
+
+    .hamburger {
+        display: block; /* Exibe o menu hambúrguer */
+    }
+
+    .buttons {
+        display: none; /* Esconde os botões inicialmente */
+        flex-direction: column;
+        position: static;
+        transform: none;
+        gap: 10px;
+    }
+
+    .buttons.open {
+        display: flex; /* Exibe o menu quando aberto */
+        align-items: center;
+    }
+
+    .buttons button {
+        width: 100%;
+        max-width: 200px;
+    }
+}
