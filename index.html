@@ -13,7 +13,7 @@
     <header>
         <!-- Cabeçalho pode ser adicionado aqui se necessário -->
     </header>
-    <main>
+    <main class="index-main">
         <!-- Logo principal -->
         <img src="Movimento.png" alt="Logo Movimento Dourado" class="index-logo">
         
@@ -23,7 +23,7 @@
         </button>
         
         <!-- Menu de navegação -->
-        <div class="buttons">
+        <div class="index-buttons">
             <button onclick="window.location.href='Teste1.html'">Vídeos</button>
             <button onclick="window.location.href='Teste2.html'">Turismo</button>
             <button onclick="window.location.href='Teste3.html'">Lagoa da Serra</button>
@@ -35,10 +35,10 @@
     </footer>
     <script>
         document.querySelector('.hamburger').addEventListener('click', () => {
-            document.querySelector('.buttons').classList.toggle('open');
+            document.querySelector('.index-buttons').classList.toggle('open');
         });
         
-        document.querySelectorAll('.buttons button').forEach(button => {
+        document.querySelectorAll('.index-buttons button').forEach(button => {
             button.addEventListener('mouseover', () => {
                 button.style.transform = 'scale(1.1)';
             });
