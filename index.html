@@ -18,6 +18,13 @@
     <main>
         <!-- Logo principal -->
         <img src="Movimento.png" alt="Logo Movimento Dourado" class="logo">
+        
+        <!-- Botão de menu hambúrguer -->
+        <button class="hamburger">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <!-- Menu de navegação -->
         <div class="buttons">
             <button onclick="window.location.href='Teste1.html'">Teste1</button>
             <button onclick="window.location.href='Teste2.html'">Teste2</button>
@@ -29,6 +36,11 @@
         <p><a href="politica-de-privacidade.html">Políticas de Privacidade</a></p>
     </footer>
     <script>
+        // Script para abrir e fechar o menu em modo sanduíche
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.querySelector('.buttons').classList.toggle('open');
+        });
+        
         document.querySelectorAll('.buttons button').forEach(button => {
             button.addEventListener('mouseover', () => {
                 button.style.transform = 'scale(1.1)';
