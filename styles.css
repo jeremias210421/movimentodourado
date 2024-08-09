@@ -123,7 +123,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px; /* Ajuste conforme necessário para acomodar a logo */
+    margin-top: 150px; /* Ajuste conforme necessário para acomodar a logo */
 }
 
 h1 {
