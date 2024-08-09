@@ -66,20 +66,21 @@ header {
 /* Estilo do footer */
 .footer {
     text-align: center;
-    padding: 20px;
+    padding: 10px;
     position: fixed;
     bottom: 0;
     width: 100%;
-    background: #333;
-    color: #fff;
+    background: #fce619; /* Cor de fundo amarela */
+    color: #333;
 }
 
 .footer p {
     margin: 0;
+    font-size: 12px; /* Reduz o tamanho do texto do rodapé */
 }
 
 .footer a {
-    color: #fff;
+    color: #333;
     text-decoration: none;
 }
 
@@ -150,23 +151,14 @@ p {
 .back-button:hover {
     background: #555;
 }
-    width: 100%;
-    font-size: 12px; /* Reduz o tamanho do texto do rodapé */
-    color: var(--button-text);
-}
-
-.footer a {
-    color: var(--text-color);
-    text-decoration: none;
-}
-
-.footer a:hover {
-    text-decoration: underline;
-}
 
 /* Estilos para telas pequenas */
 @media (max-width: 768px) {
-    .logo {
+    .index-logo,
+    .page-logo {
         width: 40%;
         max-width: 150px;
+    }
+}
+
     
