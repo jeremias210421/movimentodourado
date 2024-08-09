@@ -1,10 +1,10 @@
 :root {
     --main-color: #fce619; /* Cor de fundo amarelo */
     --text-color: #fff;
-    --button-bg: #000;
+    --button-bg: #963666;
     --button-text: #fff;
     --button-hover-bg: #fff;
-    --button-hover-text: #000;
+    --button-hover-text: #963666;
     --font-size-base: 16px;
 }
 
@@ -22,7 +22,7 @@ body, html {
 
 .logo {
     width: 20%; /* Ajuste a largura da logo conforme necessário */
-    max-width: 200px; /* Largura máxima ajustada */
+    max-width: 600px; /* Largura máxima ajustada */
     position: absolute;
     top: 50%; /* Centraliza verticalmente */
     left: 50%; /* Centraliza horizontalmente */
