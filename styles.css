@@ -21,8 +21,8 @@ body, html {
 }
 
 .logo {
-    width: 50%; /* Aumentei a largura para 50% do container */
-    max-width: 300px; /* Largura máxima ajustada para 300px */
+    width: 20%; /* Ajuste a largura da logo conforme necessário */
+    max-width: 200px; /* Largura máxima ajustada */
     position: absolute;
     top: 50%; /* Centraliza verticalmente */
     left: 50%; /* Centraliza horizontalmente */
@@ -31,65 +31,32 @@ body, html {
     z-index: 1;
 }
 
-.nav-menu {
-    position: fixed;
-    top: 8vh;
-    left: 50%;
-    transform: translateX(-50%);
+.buttons {
     display: flex;
     justify-content: center;
-    gap: 2vw;
-    flex-wrap: wrap;
+    position: absolute;
+    top: 70%; /* Ajuste a posição vertical conforme necessário */
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1;
+    gap: 15px; /* Espaçamento entre os botões */
 }
 
-.nav-menu button {
+.buttons button {
     background: var(--button-bg);
     border: none;
-    padding: 1vh 2vw;
-    font-size: 1rem;
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 25px;
+    transition: transform 0.3s ease;
     color: var(--button-text);
+    border-radius: 25px;
     white-space: nowrap;
-    min-width: 120px;
-    text-align: center;
 }
 
-.nav-menu button:hover {
+.buttons button:hover {
     background: var(--button-hover-bg);
     color: var(--button-hover-text);
-    transform: scale(1.1);
-}
-
-main {
-    padding: 2vh 5vw;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.centralizado {
-    text-align: center;
-    margin-top: 20vh;
-}
-
-.centralizado h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
-    margin: 0;
-}
-
-section {
-    margin-bottom: 4vh;
-}
-
-h2 {
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-}
-
-p, li {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    line-height: 1.6;
 }
 
 .footer {
@@ -98,100 +65,26 @@ p, li {
     position: absolute;
     bottom: 0;
     width: 100%;
-    font-size: 0.75rem; /* Reduzi o tamanho do texto do rodapé */
+    font-size: 12px; /* Reduz o tamanho do texto do rodapé */
+    color: var(--button-text);
 }
 
 .footer a {
     color: var(--text-color);
     text-decoration: none;
-    font-weight: bold;
 }
 
 .footer a:hover {
     text-decoration: underline;
 }
 
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    color: var(--text-color);
-    cursor: pointer;
-    position: fixed;
-    top: 2vh;
-    right: 2vw;
-    z-index: 3;
-}
-
-@media (max-width: 1200px) {
-    .nav-menu {
-        gap: 1.5vw;
-    }
-}
-
-@media (max-width: 992px) {
-    .nav-menu button {
-        min-width: 100px;
-    }
-}
-
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
+    .logo {
+        width: 40%;
+        max-width: 150px;
     }
-    
-    .nav-menu {
-        display: none;
+
+    .buttons {
         flex-direction: column;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: var(--main-color);
-        padding: 5vh;
-        width: 80%;
-        max-width: 300px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
-    
-    .nav-menu.active {
-        display: flex;
-    }
-    
-    .nav-menu button {
-        width: 100%;
-        margin-bottom: 1vh;
-    }
-    
-    .centralizado {
-        margin-top: 15vh;
-    }
-}
-
-@media (max-width: 576px) {
-    .centralizado {
-        margin-top: 12vh;
-    }
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 1;
-}
-
-.overlay.active {
-    display: block;
 }
