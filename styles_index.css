@@ -22,7 +22,7 @@ body, html {
 
 .logo {
     width: 20%; /* Ajuste a largura da logo conforme necessário */
-    max-width: 100px; /* Largura máxima ajustada */
+    max-width: 200px; /* Largura máxima ajustada */
     position: absolute;
     top: 50%; /* Centraliza verticalmente */
     left: 50%; /* Centraliza horizontalmente */
