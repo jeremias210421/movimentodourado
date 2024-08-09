@@ -21,12 +21,12 @@ body, html {
 }
 
 .logo {
-    width: 20%; /* Ajuste a largura da logo conforme necessário */
-    max-width: 600px; /* Largura máxima ajustada */
+    width: 20%;
+    max-width: 600px;
     position: absolute;
-    top: 40%; /* Centraliza verticalmente */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translate(-50%, -50%); /* Ajusta a posição para centralizar */
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
     z-index: 1;
 }
@@ -48,11 +48,11 @@ body, html {
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 70%; /* Ajuste a posição vertical conforme necessário */
+    top: 70%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
-    gap: 15px; /* Espaçamento entre os botões */
+    gap: 15px;
 }
 
 .buttons button {
@@ -78,7 +78,7 @@ body, html {
     position: absolute;
     bottom: 0;
     width: 100%;
-    font-size: 12px; /* Reduz o tamanho do texto do rodapé */
+    font-size: 12px;
     color: var(--button-text);
 }
 
@@ -94,29 +94,34 @@ body, html {
 /* Estilos para telas pequenas */
 @media (max-width: 768px) {
     .logo {
-        width: 40%;
-        max-width: 150px;
+        width: auto; /* Ajusta a largura automaticamente */
+        max-width: 400px; /* Define o tamanho máximo da logo em 400px */
     }
 
     .hamburger {
-        display: block; /* Exibe o menu hambúrguer */
+        display: block;
+        font-size: 25px;
     }
 
     .buttons {
-        display: none; /* Esconde os botões inicialmente */
+        display: none;
         flex-direction: column;
-        position: static;
-        transform: none;
-        gap: 10px;
+        align-items: center;
+        gap: 15px;
     }
 
     .buttons.open {
-        display: flex; /* Exibe o menu quando aberto */
-        align-items: center;
+        display: flex;
     }
 
     .buttons button {
-        width: 100%;
-        max-width: 200px;
+        width: 90%;
+        max-width: 300px;
+        padding: 15px;
+    }
+
+    .footer {
+        font-size: 14px;
+        padding: 10px 0;
     }
 }
