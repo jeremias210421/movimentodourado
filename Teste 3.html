@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Fotos Flutuantes</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f0f0f0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        .gallery {
+            position: relative;
+            width: 80vw;
+            height: 80vh;
+        }
+        .photo {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+            transition: all 0.3s ease-out;
+        }
+        .photo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery" id="gallery"></div>
+
+    <script>
+        const gallery = document.getElementById('gallery');
+        const photoCount = 10;
+        const maxMovement = 30; // máximo movimento em pixels
+
+        function createPhoto(index) {
+            const photo = document.createElement('div');
+            photo.className = 'photo';
+            photo.style.backgroundImage = `url('/api/placeholder/200/200?text=Foto${index+1}')`;
+            
+            // Posição inicial aleatória
+            const left = Math.random() * (gallery.offsetWidth - 200);
+            const top = Math.random() * (gallery.offsetHeight - 200);
+            photo.style.left = `${left}px`;
+            photo.style.top = `${top}px`;
+
+            gallery.appendChild(photo);
+            return photo;
+        }
+
+        const photos = Array.from({length: photoCount}, (_, i) => createPhoto(i));
+
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+
+            photos.forEach((photo, index) => {
+                const baseX = parseFloat(photo.style.left);
+                const baseY = parseFloat(photo.style.top);
+
+                const moveX = (mouseX - 0.5) * maxMovement * (index % 3 - 1);
+                const moveY = (mouseY - 0.5) * maxMovement * (index % 3 - 1);
+
+                photo.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
